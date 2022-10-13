@@ -5,8 +5,7 @@ emitters:
     "basic-setup-py": true
     "package-version": "1.0.0-beta.1"
     "package-name": "azure-confidentialledger"
-  # Uncomment this line and add "@azure-tools/cadl-java" to your package.json to generate Java code
-  # "@azure-tools/cadl-java": true
+  "@azure-tools/cadl-java": true
   # Uncomment this line and add "@azure-tools/cadl-csharp" to your package.json to generate C# code
   # "@azure-tools/cadl-csharp": true
   # Uncomment this line and add "@azure-tools/cadl-typescript" to your package.json to generate Typescript code
