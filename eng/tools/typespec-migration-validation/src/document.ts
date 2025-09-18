@@ -236,6 +236,7 @@ function processParameter(parameter: Refable<OpenAPI2Parameter>): Refable<OpenAP
 
 function processDefinition(definition: OpenAPI2Schema): OpenAPI2Schema {
   const newDefinition: OpenAPI2Schema = deepCopy(definition);
+  removeTitleAndExample(newDefinition);
   for (const propertyName in definition.properties) {
     const property = definition.properties[propertyName] as OpenAPI2SchemaProperty;
     const processedProperty = processProperty(property);
@@ -346,6 +347,15 @@ function processProperty(property: OpenAPI2SchemaProperty): OpenAPI2SchemaProper
     ) {
       newProperty.type = "object";
     }
+
+    if (newProperty.type === "object" && newProperty.properties) {
+      for (const nestedPropertyName of Object.keys(newProperty.properties)) {
+        const property = newProperty.properties[nestedPropertyName];
+        if (!isOpenAPI2SchemaRefProperty(property)) {
+          removeTitleAndExample(property);
+        }
+      }
+    }
   }
 
   const identifiers = (newProperty as any)["x-ms-identifiers"];
@@ -363,6 +373,8 @@ function processProperty(property: OpenAPI2SchemaProperty): OpenAPI2SchemaProper
   if ((newProperty as any)["uniqueItems"] === false) {
     delete (newProperty as any)["uniqueItems"];
   }
+
+  removeTitleAndExample(newProperty);
 
   if (configuration.ignoreDescription) {
     delete newProperty.description;
@@ -441,4 +453,14 @@ function deepCopy<T>(value: T): T {
   }
 
   return result as T;
+}
+
+function removeTitleAndExample<T>(value: T): T {
+  if ((value as any).title) {
+    delete (value as any).title;
+  }
+  if ((value as any).example) {
+    delete (value as any).example;
+  }
+  return value;
 }
