@@ -125,6 +125,9 @@
         "description": "Return the current diagnostic snapshot for an entity.",
         "parameters": [
           {
+            "$ref": "#/parameters/Azure.Core.Foundations.ApiVersionParameter"
+          },
+          {
             "name": "entityName",
             "in": "path",
             "description": "The entity to return a diagnostic snapshot for.",
@@ -132,9 +135,6 @@
             "type": "string",
             "maxLength": 260,
             "pattern": "^[a-zA-Z0-9][a-zA-Z0-9-]{1,258}[a-zA-Z0-9]$"
-          },
-          {
-            "$ref": "#/parameters/Azure.Core.Foundations.ApiVersionParameter"
           }
         ],
         "responses": {
@@ -200,6 +200,9 @@
         "description": "Return the data annotations recorded for an entity, newest first.",
         "parameters": [
           {
+            "$ref": "#/parameters/Azure.Core.Foundations.ApiVersionParameter"
+          },
+          {
             "name": "entityName",
             "in": "path",
             "description": "The entity to return data annotations for.",
@@ -241,9 +244,6 @@
             "required": false,
             "type": "string",
             "maxLength": 4096
-          },
-          {
-            "$ref": "#/parameters/Azure.Core.Foundations.ApiVersionParameter"
           }
         ],
         "responses": {
@@ -312,6 +312,9 @@
         "description": "Ingest a health report for a specific signal on an entity.",
         "parameters": [
           {
+            "$ref": "#/parameters/Azure.Core.Foundations.ApiVersionParameter"
+          },
+          {
             "name": "entityName",
             "in": "path",
             "description": "Name of the entity that the health report targets.",
@@ -319,9 +322,6 @@
             "type": "string",
             "maxLength": 260,
             "pattern": "^[a-zA-Z0-9][a-zA-Z0-9-]{1,258}[a-zA-Z0-9]$"
-          },
-          {
-            "$ref": "#/parameters/Azure.Core.Foundations.ApiVersionParameter"
           },
           {
             "name": "body",
@@ -464,6 +464,9 @@
         "description": "Return the health-state periods active during the requested window for an entity.",
         "parameters": [
           {
+            "$ref": "#/parameters/Azure.Core.Foundations.ApiVersionParameter"
+          },
+          {
             "name": "entityName",
             "in": "path",
             "description": "The entity to return health-state history for.",
@@ -487,9 +490,6 @@
             "required": false,
             "type": "string",
             "format": "date-time"
-          },
-          {
-            "$ref": "#/parameters/Azure.Core.Foundations.ApiVersionParameter"
           }
         ],
         "responses": {
@@ -555,6 +555,9 @@
         "description": "Return the data points recorded for an entity's signal, newest first.",
         "parameters": [
           {
+            "$ref": "#/parameters/Azure.Core.Foundations.ApiVersionParameter"
+          },
+          {
             "name": "entityName",
             "in": "path",
             "description": "The entity that owns the signal to return history for.",
@@ -605,9 +608,6 @@
             "required": false,
             "type": "string",
             "maxLength": 4096
-          },
-          {
-            "$ref": "#/parameters/Azure.Core.Foundations.ApiVersionParameter"
           }
         ],
         "responses": {
@@ -676,6 +676,9 @@
         "description": "Return the health-state transitions recorded for an entity, newest first.",
         "parameters": [
           {
+            "$ref": "#/parameters/Azure.Core.Foundations.ApiVersionParameter"
+          },
+          {
             "name": "entityName",
             "in": "path",
             "description": "The entity to return health-state transitions for.",
@@ -717,9 +720,6 @@
             "required": false,
             "type": "string",
             "maxLength": 4096
-          },
-          {
-            "$ref": "#/parameters/Azure.Core.Foundations.ApiVersionParameter"
           }
         ],
         "responses": {
