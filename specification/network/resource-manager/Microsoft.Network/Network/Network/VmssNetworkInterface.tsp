@@ -53,7 +53,7 @@ alias PublicIPAddressListOps = Azure.ResourceManager.Legacy.RoutedOperations<
 #suppress "@azure-tools/typespec-azure-resource-manager/arm-resource-interface-requires-decorator" "FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details"
 #suppress "@azure-tools/typespec-azure-core/no-legacy-usage" "needed for foreign api version"
 @featureFile(Features.vmssNetworkConfiguration)
-@Azure.ClientGenerator.Core.Legacy.overrideClientApiVersion("2018-10-01")
+@Azure.Core.Legacy.overrideApiVersion("2018-10-01")
 interface VmssNetworkInterfacesOperationGroup {
   /**
    * Gets all network interfaces in a virtual machine scale set.
@@ -81,7 +81,7 @@ interface VmssNetworkInterfacesOperationGroup {
 
 #suppress "@azure-tools/typespec-azure-core/no-legacy-usage" "needed for foreign api version"
 @featureFile(Features.vmssNetworkConfiguration)
-@Azure.ClientGenerator.Core.Legacy.overrideClientApiVersion("2018-10-01")
+@Azure.Core.Legacy.overrideApiVersion("2018-10-01")
 @armResourceOperations(#{ allowStaticRoutes: true })
 interface VmssNetworkInterfaces {
   /**

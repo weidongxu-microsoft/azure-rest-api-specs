@@ -29,7 +29,7 @@ alias NetworkInterfaceIPConfigurationOps = Azure.ResourceManager.Legacy.RoutedOp
 
 #suppress "@azure-tools/typespec-azure-core/no-legacy-usage" "needed for foreign api version"
 @featureFile(Features.vmssNetworkConfiguration)
-@Azure.ClientGenerator.Core.Legacy.overrideClientApiVersion("2018-10-01")
+@Azure.Core.Legacy.overrideApiVersion("2018-10-01")
 @armResourceOperations(#{ allowStaticRoutes: true, omitTags: true })
 interface NetworkInterfaceIPConfigurations {
   /**
