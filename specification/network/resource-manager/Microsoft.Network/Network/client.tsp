@@ -72,6 +72,18 @@ namespace Common {
 );
 
 @@clientLocation(
+  Microsoft.Network.VmssNetworkInterfaces.getVirtualMachineScaleSetNetworkInterface,
+  Microsoft.Network.NetworkInterfaces,
+  "java"
+);
+
+@@clientLocation(
+  Microsoft.Network.VmssNetworkInterfaces.listVirtualMachineScaleSetVMNetworkInterfaces,
+  Microsoft.Network.NetworkInterfaces,
+  "java"
+);
+
+@@clientLocation(
   Microsoft.Network.VmssPublicIPAddressesOperationGroup.listVirtualMachineScaleSetPublicIPAddresses,
   Microsoft.Network.PublicIPAddresses,
   "java,javascript,python,go"
